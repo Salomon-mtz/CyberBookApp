@@ -9,11 +9,26 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
+    
+    
+    @IBAction func login(_ sender: UIButton) {
 
+    }
+    
+    @IBAction func signUp(_ sender: UIButton) {
 
+    }
+    
+    @IBAction func info(_ sender: UIButton) {
+
+    }
+    
+    
+    
 }
 
