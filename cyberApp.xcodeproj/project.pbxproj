@@ -7,27 +7,117 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A602268028E7E53D00902735 /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A602267F28E7E53D00902735 /* MainTableViewController.swift */; };
+		A605E60F28DD4453000B01FA /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A605E60E28DD4453000B01FA /* LoginViewController.swift */; };
+		A605E61128DD4473000B01FA /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A605E61028DD4473000B01FA /* SignUpViewController.swift */; };
+		A605E61328DD4492000B01FA /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A605E61228DD4492000B01FA /* InfoViewController.swift */; };
+		A6261CBE28ECED08003962FB /* AddLicenciasTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6261CBD28ECED08003962FB /* AddLicenciasTableViewController.swift */; };
+		A6261CC028ECEDC5003962FB /* LicenciasTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6261CBF28ECEDC5003962FB /* LicenciasTableViewCell.swift */; };
+		A6261CC228ED2038003962FB /* ClassroomController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6261CC128ED2038003962FB /* ClassroomController.swift */; };
+		A63DB9CD28EE20CF00E14A0E /* Reserva.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63DB9CC28EE20CF00E14A0E /* Reserva.swift */; };
+		A63DB9CF28EE21D900E14A0E /* ReservaController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63DB9CE28EE21D900E14A0E /* ReservaController.swift */; };
+		A63DB9D128EE225400E14A0E /* EditReservaTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63DB9D028EE225400E14A0E /* EditReservaTableViewController.swift */; };
+		A63DB9D328EE233600E14A0E /* ReservaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63DB9D228EE233600E14A0E /* ReservaViewController.swift */; };
+		A63DB9D528EE248700E14A0E /* ReservaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63DB9D428EE248700E14A0E /* ReservaTableViewCell.swift */; };
+		A653238A28E232D200A9628A /* Historial.swift in Sources */ = {isa = PBXBuildFile; fileRef = A653238928E232D200A9628A /* Historial.swift */; };
+		A653238C28E36CF200A9628A /* SegmentedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A653238B28E36CF200A9628A /* SegmentedViewController.swift */; };
+		A653D5C528F90A5A00958F21 /* PerfilViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A653D5C428F90A5A00958F21 /* PerfilViewController.swift */; };
+		A656DA8428E9367800D7CEB8 /* AddEditTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A656DA8328E9367800D7CEB8 /* AddEditTableViewController.swift */; };
+		A656DA8628EA554B00D7CEB8 /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A656DA8528EA554B00D7CEB8 /* MainTableViewCell.swift */; };
 		A6740B6728DBFE7600A050BF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6740B6628DBFE7600A050BF /* AppDelegate.swift */; };
 		A6740B6928DBFE7600A050BF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6740B6828DBFE7600A050BF /* SceneDelegate.swift */; };
-		A6740B6B28DBFE7600A050BF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6740B6A28DBFE7600A050BF /* ViewController.swift */; };
+		A6740B6B28DBFE7600A050BF /* PrincipalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6740B6A28DBFE7600A050BF /* PrincipalViewController.swift */; };
 		A6740B6E28DBFE7600A050BF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6740B6C28DBFE7600A050BF /* Main.storyboard */; };
 		A6740B7028DBFE7700A050BF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A6740B6F28DBFE7700A050BF /* Assets.xcassets */; };
 		A6740B7328DBFE7700A050BF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6740B7128DBFE7700A050BF /* LaunchScreen.storyboard */; };
+		A676989A28ECE64E003009C8 /* EquiposTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A676989928ECE64E003009C8 /* EquiposTableViewCell.swift */; };
+		A67698A028ECE9FB003009C8 /* AddEquiposTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A676989F28ECE9FB003009C8 /* AddEquiposTableViewController.swift */; };
+		A69E839F28F0AB6600604B53 /* AddEquipoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69E839E28F0AB6500604B53 /* AddEquipoViewController.swift */; };
+		A6A8E29328EE6DE700ABA79E /* LicenseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A8E29228EE6DE700ABA79E /* LicenseController.swift */; };
+		A6A8E29D28EE7DB800ABA79E /* LicenciasTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A8E29C28EE7DB800ABA79E /* LicenciasTableViewController.swift */; };
+		A6B61DCC28E61A3A00201059 /* Licenses.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B61DCB28E61A3A00201059 /* Licenses.swift */; };
+		A6B61DCE28E659A400201059 /* ClassroomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B61DCD28E659A400201059 /* ClassroomTableViewCell.swift */; };
+		A6DF2E2428F0B4E500F40873 /* AddLicenciaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6DF2E2328F0B4E500F40873 /* AddLicenciaViewController.swift */; };
+		A6DF2E2C28F0EC9D00F40873 /* cyberAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6DF2E2B28F0EC9D00F40873 /* cyberAppTests.swift */; };
+		A6DF2E3428F142DF00F40873 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6DF2E3328F142DF00F40873 /* HomeViewController.swift */; };
+		A6E6FE7528FCB3C4002A781D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E6FE7428FCB3C4002A781D /* ViewController.swift */; };
+		A6E7529728EE966600E97270 /* Equipos.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E7529628EE966600E97270 /* Equipos.swift */; };
+		A6E7529928EE966E00E97270 /* EquiposController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E7529828EE966E00E97270 /* EquiposController.swift */; };
+		A6E7529B28EE985F00E97270 /* EquipoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E7529A28EE985F00E97270 /* EquipoTableViewController.swift */; };
+		A6E752A128EFE17A00E97270 /* VerificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E752A028EFE17A00E97270 /* VerificationViewController.swift */; };
+		A6E752A328F067FF00E97270 /* AddClassToReservaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E752A228F067FF00E97270 /* AddClassToReservaViewController.swift */; };
+		A6F546A628E7989A002DFAF6 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6F546A528E7989A002DFAF6 /* User.swift */; };
+		A6FBD43A28E53CC800767456 /* Classrooms.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6FBD43928E53CC800767456 /* Classrooms.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		A6DF2E2D28F0EC9D00F40873 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A6740B5B28DBFE7600A050BF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A6740B6228DBFE7600A050BF;
+			remoteInfo = cyberApp;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		A602267F28E7E53D00902735 /* MainTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
+		A605E60E28DD4453000B01FA /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		A605E61028DD4473000B01FA /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		A605E61228DD4492000B01FA /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
+		A6261CBD28ECED08003962FB /* AddLicenciasTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddLicenciasTableViewController.swift; sourceTree = "<group>"; };
+		A6261CBF28ECEDC5003962FB /* LicenciasTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicenciasTableViewCell.swift; sourceTree = "<group>"; };
+		A6261CC128ED2038003962FB /* ClassroomController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassroomController.swift; sourceTree = "<group>"; };
+		A63DB9CC28EE20CF00E14A0E /* Reserva.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reserva.swift; sourceTree = "<group>"; };
+		A63DB9CE28EE21D900E14A0E /* ReservaController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservaController.swift; sourceTree = "<group>"; };
+		A63DB9D028EE225400E14A0E /* EditReservaTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditReservaTableViewController.swift; sourceTree = "<group>"; };
+		A63DB9D228EE233600E14A0E /* ReservaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservaViewController.swift; sourceTree = "<group>"; };
+		A63DB9D428EE248700E14A0E /* ReservaTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservaTableViewCell.swift; sourceTree = "<group>"; };
+		A653238928E232D200A9628A /* Historial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Historial.swift; sourceTree = "<group>"; };
+		A653238B28E36CF200A9628A /* SegmentedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedViewController.swift; sourceTree = "<group>"; };
+		A653D5C428F90A5A00958F21 /* PerfilViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerfilViewController.swift; sourceTree = "<group>"; };
+		A656DA8328E9367800D7CEB8 /* AddEditTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEditTableViewController.swift; sourceTree = "<group>"; };
+		A656DA8528EA554B00D7CEB8 /* MainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
 		A6740B6328DBFE7600A050BF /* cyberApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cyberApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6740B6628DBFE7600A050BF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A6740B6828DBFE7600A050BF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		A6740B6A28DBFE7600A050BF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A6740B6A28DBFE7600A050BF /* PrincipalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrincipalViewController.swift; sourceTree = "<group>"; };
 		A6740B6D28DBFE7600A050BF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A6740B6F28DBFE7700A050BF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A6740B7228DBFE7700A050BF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A6740B7428DBFE7700A050BF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A676989928ECE64E003009C8 /* EquiposTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquiposTableViewCell.swift; sourceTree = "<group>"; };
+		A676989F28ECE9FB003009C8 /* AddEquiposTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEquiposTableViewController.swift; sourceTree = "<group>"; };
+		A69E839E28F0AB6500604B53 /* AddEquipoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEquipoViewController.swift; sourceTree = "<group>"; };
+		A6A8E29228EE6DE700ABA79E /* LicenseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicenseController.swift; sourceTree = "<group>"; };
+		A6A8E29C28EE7DB800ABA79E /* LicenciasTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicenciasTableViewController.swift; sourceTree = "<group>"; };
+		A6B61DCB28E61A3A00201059 /* Licenses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Licenses.swift; sourceTree = "<group>"; };
+		A6B61DCD28E659A400201059 /* ClassroomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassroomTableViewCell.swift; sourceTree = "<group>"; };
+		A6DF2E2328F0B4E500F40873 /* AddLicenciaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddLicenciaViewController.swift; sourceTree = "<group>"; };
+		A6DF2E2928F0EC9C00F40873 /* cyberAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = cyberAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A6DF2E2B28F0EC9D00F40873 /* cyberAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cyberAppTests.swift; sourceTree = "<group>"; };
+		A6DF2E3328F142DF00F40873 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		A6E6FE7428FCB3C4002A781D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A6E7529628EE966600E97270 /* Equipos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Equipos.swift; sourceTree = "<group>"; };
+		A6E7529828EE966E00E97270 /* EquiposController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquiposController.swift; sourceTree = "<group>"; };
+		A6E7529A28EE985F00E97270 /* EquipoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipoTableViewController.swift; sourceTree = "<group>"; };
+		A6E752A028EFE17A00E97270 /* VerificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationViewController.swift; sourceTree = "<group>"; };
+		A6E752A228F067FF00E97270 /* AddClassToReservaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddClassToReservaViewController.swift; sourceTree = "<group>"; };
+		A6F546A528E7989A002DFAF6 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		A6FBD43928E53CC800767456 /* Classrooms.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Classrooms.swift; sourceTree = "<group>"; };
+		A6FBD44028E5421300767456 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		A6FBD44128E5421300767456 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		A6740B6028DBFE7600A050BF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A6DF2E2628F0EC9C00F40873 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -41,7 +131,9 @@
 			isa = PBXGroup;
 			children = (
 				A6740B6528DBFE7600A050BF /* cyberApp */,
+				A6DF2E2A28F0EC9D00F40873 /* cyberAppTests */,
 				A6740B6428DBFE7600A050BF /* Products */,
+				A6FBD43F28E5421300767456 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -49,6 +141,7 @@
 			isa = PBXGroup;
 			children = (
 				A6740B6328DBFE7600A050BF /* cyberApp.app */,
+				A6DF2E2928F0EC9C00F40873 /* cyberAppTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -58,13 +151,112 @@
 			children = (
 				A6740B6628DBFE7600A050BF /* AppDelegate.swift */,
 				A6740B6828DBFE7600A050BF /* SceneDelegate.swift */,
-				A6740B6A28DBFE7600A050BF /* ViewController.swift */,
+				A6FBD43D28E541A900767456 /* Models */,
+				A6FBD43E28E541BB00767456 /* Controllers */,
 				A6740B6C28DBFE7600A050BF /* Main.storyboard */,
 				A6740B6F28DBFE7700A050BF /* Assets.xcassets */,
 				A6740B7128DBFE7700A050BF /* LaunchScreen.storyboard */,
 				A6740B7428DBFE7700A050BF /* Info.plist */,
 			);
 			path = cyberApp;
+			sourceTree = "<group>";
+		};
+		A6A8E29428EE74BF00ABA79E /* Login & Signup */ = {
+			isa = PBXGroup;
+			children = (
+				A605E60E28DD4453000B01FA /* LoginViewController.swift */,
+				A605E61028DD4473000B01FA /* SignUpViewController.swift */,
+				A6E752A028EFE17A00E97270 /* VerificationViewController.swift */,
+			);
+			path = "Login & Signup";
+			sourceTree = "<group>";
+		};
+		A6A8E29528EE74EE00ABA79E /* Table Cells */ = {
+			isa = PBXGroup;
+			children = (
+				A63DB9D428EE248700E14A0E /* ReservaTableViewCell.swift */,
+				A6B61DCD28E659A400201059 /* ClassroomTableViewCell.swift */,
+				A6261CBF28ECEDC5003962FB /* LicenciasTableViewCell.swift */,
+				A676989928ECE64E003009C8 /* EquiposTableViewCell.swift */,
+				A656DA8528EA554B00D7CEB8 /* MainTableViewCell.swift */,
+			);
+			path = "Table Cells";
+			sourceTree = "<group>";
+		};
+		A6A8E29828EE755D00ABA79E /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				A605E61228DD4492000B01FA /* InfoViewController.swift */,
+				A653D5C428F90A5A00958F21 /* PerfilViewController.swift */,
+				A6E752A228F067FF00E97270 /* AddClassToReservaViewController.swift */,
+				A6E6FE7428FCB3C4002A781D /* ViewController.swift */,
+				A69E839E28F0AB6500604B53 /* AddEquipoViewController.swift */,
+				A602267F28E7E53D00902735 /* MainTableViewController.swift */,
+				A6A8E29C28EE7DB800ABA79E /* LicenciasTableViewController.swift */,
+				A6DF2E2328F0B4E500F40873 /* AddLicenciaViewController.swift */,
+				A6DF2E3328F142DF00F40873 /* HomeViewController.swift */,
+				A6E7529A28EE985F00E97270 /* EquipoTableViewController.swift */,
+				A63DB9D228EE233600E14A0E /* ReservaViewController.swift */,
+				A6740B6A28DBFE7600A050BF /* PrincipalViewController.swift */,
+				A653238B28E36CF200A9628A /* SegmentedViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		A6A8E29928EE756B00ABA79E /* Edit Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A6261CBD28ECED08003962FB /* AddLicenciasTableViewController.swift */,
+				A676989F28ECE9FB003009C8 /* AddEquiposTableViewController.swift */,
+				A63DB9D028EE225400E14A0E /* EditReservaTableViewController.swift */,
+				A656DA8328E9367800D7CEB8 /* AddEditTableViewController.swift */,
+			);
+			path = "Edit Controller";
+			sourceTree = "<group>";
+		};
+		A6DF2E2A28F0EC9D00F40873 /* cyberAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				A6DF2E2B28F0EC9D00F40873 /* cyberAppTests.swift */,
+			);
+			path = cyberAppTests;
+			sourceTree = "<group>";
+		};
+		A6FBD43D28E541A900767456 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A6FBD43928E53CC800767456 /* Classrooms.swift */,
+				A6261CC128ED2038003962FB /* ClassroomController.swift */,
+				A6F546A528E7989A002DFAF6 /* User.swift */,
+				A6B61DCB28E61A3A00201059 /* Licenses.swift */,
+				A6A8E29228EE6DE700ABA79E /* LicenseController.swift */,
+				A63DB9CC28EE20CF00E14A0E /* Reserva.swift */,
+				A63DB9CE28EE21D900E14A0E /* ReservaController.swift */,
+				A6E7529628EE966600E97270 /* Equipos.swift */,
+				A6E7529828EE966E00E97270 /* EquiposController.swift */,
+				A653238928E232D200A9628A /* Historial.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A6FBD43E28E541BB00767456 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				A6A8E29428EE74BF00ABA79E /* Login & Signup */,
+				A6A8E29528EE74EE00ABA79E /* Table Cells */,
+				A6A8E29828EE755D00ABA79E /* View Controllers */,
+				A6A8E29928EE756B00ABA79E /* Edit Controller */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		A6FBD43F28E5421300767456 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A6FBD44128E5421300767456 /* libsqlite3.0.tbd */,
+				A6FBD44028E5421300767456 /* libsqlite3.tbd */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -87,6 +279,24 @@
 			productReference = A6740B6328DBFE7600A050BF /* cyberApp.app */;
 			productType = "com.apple.product-type.application";
 		};
+		A6DF2E2828F0EC9C00F40873 /* cyberAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A6DF2E3128F0EC9D00F40873 /* Build configuration list for PBXNativeTarget "cyberAppTests" */;
+			buildPhases = (
+				A6DF2E2528F0EC9C00F40873 /* Sources */,
+				A6DF2E2628F0EC9C00F40873 /* Frameworks */,
+				A6DF2E2728F0EC9C00F40873 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A6DF2E2E28F0EC9D00F40873 /* PBXTargetDependency */,
+			);
+			name = cyberAppTests;
+			productName = cyberAppTests;
+			productReference = A6DF2E2928F0EC9C00F40873 /* cyberAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -99,6 +309,10 @@
 				TargetAttributes = {
 					A6740B6228DBFE7600A050BF = {
 						CreatedOnToolsVersion = 14.0;
+					};
+					A6DF2E2828F0EC9C00F40873 = {
+						CreatedOnToolsVersion = 14.0.1;
+						TestTargetID = A6740B6228DBFE7600A050BF;
 					};
 				};
 			};
@@ -116,6 +330,7 @@
 			projectRoot = "";
 			targets = (
 				A6740B6228DBFE7600A050BF /* cyberApp */,
+				A6DF2E2828F0EC9C00F40873 /* cyberAppTests */,
 			);
 		};
 /* End PBXProject section */
@@ -131,6 +346,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A6DF2E2728F0EC9C00F40873 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -138,13 +360,63 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A6740B6B28DBFE7600A050BF /* ViewController.swift in Sources */,
+				A6E7529B28EE985F00E97270 /* EquipoTableViewController.swift in Sources */,
+				A602268028E7E53D00902735 /* MainTableViewController.swift in Sources */,
+				A69E839F28F0AB6600604B53 /* AddEquipoViewController.swift in Sources */,
+				A6DF2E3428F142DF00F40873 /* HomeViewController.swift in Sources */,
+				A6A8E29D28EE7DB800ABA79E /* LicenciasTableViewController.swift in Sources */,
+				A6E7529728EE966600E97270 /* Equipos.swift in Sources */,
+				A6B61DCE28E659A400201059 /* ClassroomTableViewCell.swift in Sources */,
+				A67698A028ECE9FB003009C8 /* AddEquiposTableViewController.swift in Sources */,
+				A6261CBE28ECED08003962FB /* AddLicenciasTableViewController.swift in Sources */,
+				A63DB9D328EE233600E14A0E /* ReservaViewController.swift in Sources */,
+				A63DB9D128EE225400E14A0E /* EditReservaTableViewController.swift in Sources */,
+				A653D5C528F90A5A00958F21 /* PerfilViewController.swift in Sources */,
+				A6FBD43A28E53CC800767456 /* Classrooms.swift in Sources */,
+				A6261CC028ECEDC5003962FB /* LicenciasTableViewCell.swift in Sources */,
+				A6B61DCC28E61A3A00201059 /* Licenses.swift in Sources */,
+				A63DB9D528EE248700E14A0E /* ReservaTableViewCell.swift in Sources */,
+				A605E61128DD4473000B01FA /* SignUpViewController.swift in Sources */,
+				A6E752A128EFE17A00E97270 /* VerificationViewController.swift in Sources */,
+				A6261CC228ED2038003962FB /* ClassroomController.swift in Sources */,
+				A6E6FE7528FCB3C4002A781D /* ViewController.swift in Sources */,
+				A6DF2E2428F0B4E500F40873 /* AddLicenciaViewController.swift in Sources */,
+				A653238A28E232D200A9628A /* Historial.swift in Sources */,
+				A605E60F28DD4453000B01FA /* LoginViewController.swift in Sources */,
+				A656DA8628EA554B00D7CEB8 /* MainTableViewCell.swift in Sources */,
+				A63DB9CF28EE21D900E14A0E /* ReservaController.swift in Sources */,
+				A6740B6B28DBFE7600A050BF /* PrincipalViewController.swift in Sources */,
 				A6740B6728DBFE7600A050BF /* AppDelegate.swift in Sources */,
+				A653238C28E36CF200A9628A /* SegmentedViewController.swift in Sources */,
+				A656DA8428E9367800D7CEB8 /* AddEditTableViewController.swift in Sources */,
+				A6E7529928EE966E00E97270 /* EquiposController.swift in Sources */,
+				A6E752A328F067FF00E97270 /* AddClassToReservaViewController.swift in Sources */,
+				A605E61328DD4492000B01FA /* InfoViewController.swift in Sources */,
+				A6A8E29328EE6DE700ABA79E /* LicenseController.swift in Sources */,
+				A63DB9CD28EE20CF00E14A0E /* Reserva.swift in Sources */,
 				A6740B6928DBFE7600A050BF /* SceneDelegate.swift in Sources */,
+				A676989A28ECE64E003009C8 /* EquiposTableViewCell.swift in Sources */,
+				A6F546A628E7989A002DFAF6 /* User.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A6DF2E2528F0EC9C00F40873 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A6DF2E2C28F0EC9D00F40873 /* cyberAppTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A6DF2E2E28F0EC9D00F40873 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A6740B6228DBFE7600A050BF /* cyberApp */;
+			targetProxy = A6DF2E2D28F0EC9D00F40873 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		A6740B6C28DBFE7600A050BF /* Main.storyboard */ = {
@@ -216,7 +488,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -270,7 +542,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -336,6 +608,48 @@
 			};
 			name = Release;
 		};
+		A6DF2E2F28F0EC9D00F40873 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = tec.mx.cyberAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/cyberApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/cyberApp";
+			};
+			name = Debug;
+		};
+		A6DF2E3028F0EC9D00F40873 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = tec.mx.cyberAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/cyberApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/cyberApp";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -353,6 +667,15 @@
 			buildConfigurations = (
 				A6740B7828DBFE7700A050BF /* Debug */,
 				A6740B7928DBFE7700A050BF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A6DF2E3128F0EC9D00F40873 /* Build configuration list for PBXNativeTarget "cyberAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A6DF2E2F28F0EC9D00F40873 /* Debug */,
+				A6DF2E3028F0EC9D00F40873 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

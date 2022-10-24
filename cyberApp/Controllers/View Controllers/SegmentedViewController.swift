@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+/*
 class SegmentedViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     
@@ -17,7 +17,7 @@ class SegmentedViewController: UIViewController, UITableViewDelegate, UITableVie
     var classroom = Classrooms()
     var licenseController = LicenseController()
     var licencia = Licenses()
-    var equipos = Equipos.listaEquipos()
+    var equipos = Equipos()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -168,4 +168,4 @@ class SegmentedViewController: UIViewController, UITableViewDelegate, UITableVie
         }
         
     }
-}
+}*/

@@ -6,19 +6,42 @@
 //
 
 import Foundation
+import UIKit
 
-struct Reservation{
-    var titulo:String
-    var fechaReserva:String
-    var capacidad:Int
-    var herramientas:String
-}
-
-extension Reservation {
-    static func listaReservas()->[Reservation]{
-        return([Reservation(titulo: "PacketTarcer", fechaReserva: "2022/10/01", capacidad: 15, herramientas: "💻"),
-                Reservation(titulo: "Minitab", fechaReserva: "2022/11/13", capacidad: 10, herramientas: "🖥")])
-        
-        
+let appDelegate2 = UIApplication.shared.delegate as! AppDelegate
+struct Classroom: Codable{
+    let id:Int
+    var nombreEspacio:String
+    var caracteristicas:String
+    var disponibleEsp:String
+    var capacidad:String
+    
+    init(id:Int, nombreEspacio:String, caracteristicas: String, disponibleEsp:String, capacidad: String){
+        self.id = id
+        self.nombreEspacio = nombreEspacio
+        self.caracteristicas = caracteristicas
+        self.disponibleEsp = disponibleEsp
+        self.capacidad = capacidad
+    }
+    init(nombreEspacio:String, caracteristicas: String, disponibleEsp:String, capacidad: String){
+        self.id = 1403
+        self.nombreEspacio = nombreEspacio
+        self.caracteristicas = caracteristicas
+        self.disponibleEsp = disponibleEsp
+        self.capacidad = capacidad
     }
 }
+typealias Classrooms = [Classroom]
+
+
+
+/*
+extension Classrooms {
+    static func listaSalones()->[Classrooms]{
+        return([Classrooms(titulo: "Salon 1301", fechaReserva: "", horario: "Hh:Mm", estatus: "disponible", capacidad: "15"),
+                Classrooms(titulo: "Lab 1105", fechaReserva: "", horario: "Hh:Mm", estatus: "disponible", capacidad: "10"),
+                Classrooms(titulo: "Sala 1202", fechaReserva: "", horario: "Hh:Mm", estatus: "disponible", capacidad: "20"),])
+        
+        
+    }*/
+

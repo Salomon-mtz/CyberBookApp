@@ -8,6 +8,7 @@
 import UIKit
 
 class ReservaViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
     var reservaController = ReservaController()
     var reserva = Reservas()
     @IBOutlet weak var tableView: UITableView!
@@ -21,8 +22,16 @@ class ReservaViewController: UIViewController, UITableViewDelegate, UITableViewD
             do{
                 let reserva = try await reservaController.fetchReservas()
                 updateUI(with: reserva)
+                
+                if reserva.isEmpty{
+                    let alert = UIAlertController(title: "Sin reservas", message: "Aún no ha realizado ninguna reservación", preferredStyle: .alert)
+                    
+                    alert.addAction(UIAlertAction(title: "Aceptar", style: .cancel, handler:  nil))
+                    
+                    self.present(alert, animated: true, completion: nil)
+                }
             }catch{
-                displayError(ClassroomError.itemNotFound, title: "No se pudo acceder a las reservas")
+                displayError(ReservaError.itemNotFound, title: "No se pudo acceder a las reservas")
             }
         }
     }
@@ -64,7 +73,7 @@ class ReservaViewController: UIViewController, UITableViewDelegate, UITableViewD
 
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "salones", for: indexPath) as! ReservaTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "reserva", for: indexPath) as! ReservaTableViewCell
         
         // Configure the cell...
         let reserva = self.reserva[indexPath.row]
@@ -123,6 +132,7 @@ class ReservaViewController: UIViewController, UITableViewDelegate, UITableViewD
             Task{
                 do{
                     let registroEliminar = reserva[indexPath.row].id
+                    print(registroEliminar)
                     try await self.reservaController.deleteReserva(registroID: registroEliminar)
                     self.updateUI()
                 }catch{

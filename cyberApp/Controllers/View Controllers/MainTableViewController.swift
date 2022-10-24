@@ -43,11 +43,6 @@ class MainTableViewController: UIViewController, UITableViewDelegate, UITableVie
         }
     
     
-    @IBAction func editButtonTapped(_ sender: UIBarButtonItem) {
-        let tableViewEditingMode = tableView.isEditing
-            tableView.setEditing(!tableViewEditingMode, animated: true)
-    }
-    
     func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
         let movedEmoji = classroom.remove(at: fromIndexPath.row)
         classroom.insert(movedEmoji, at: to.row)
@@ -75,56 +70,6 @@ class MainTableViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     
-    @IBAction func unwindToEmojiTableView(segue: UIStoryboardSegue) {
-        guard segue.identifier == "saveUnwind",
-            let sourceViewController = segue.source as? AddEditReservaTableViewController,
-              let classroom = sourceViewController.classrooms else { return };
-
-        if let selectedIndexPath = tableView.indexPathForSelectedRow {
-            Task{
-                do{
-                    try await classController.insertReserva(nuevareserva: classroom)
-                    self.updateUI()
-                }catch{
-                    displayError(ClassroomError.itemNotFound, title: "No se puede insertar la reserva")
-                }
-            }
-        }
-    }
-    
-    
-    @IBSegueAction func addEdit(_ coder: NSCoder, sender: Any?) -> AddEditReservaTableViewController? {
-        if let cell = sender as? UITableViewCell, let indexPath = tableView.indexPath(for: cell) {
-            // Editing Emoji
-            let c = classroom[indexPath.row]
-            return AddEditReservaTableViewController(coder: coder, c: c)
-        } else {
-            // Adding Emoji
-            return AddEditReservaTableViewController(coder: coder, c: nil)
-        }
-    }
-    
-    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
-        return .delete
-    }
-
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            Task{
-                do{
-                    let registroEliminar = classroom[indexPath.row].id
-                    try await self.classController.deleteReserva(registroID: registroEliminar)
-                    self.updateUI()
-                }catch{
-                    displayError(ClassroomError.itemNotFound, title: "No se puede eliminar")
-                }
-            }
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }
-    }
-    
     func updateUI(){
         Task{
             do{
@@ -138,9 +83,7 @@ class MainTableViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     
-    @IBAction func didViewChange(_ sender: UISegmentedControl) {
-        tableView.reloadData()
-    }
+
 }
 
    

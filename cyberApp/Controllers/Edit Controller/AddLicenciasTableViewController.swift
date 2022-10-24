@@ -7,9 +7,9 @@
 
 import UIKit
 
-class AddLicenciasTableViewController: UITableViewController {
+class AddLicenciasTableViewController: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource {
 
-    var licencia:License?
+    var licences:License?
     
     //PASO 0 crear un IBOutlet del boton save
     @IBOutlet weak var saveButton: UIBarButtonItem! //paso 0
@@ -19,9 +19,10 @@ class AddLicenciasTableViewController: UITableViewController {
     @IBOutlet weak var textEstatus: UILabel!
     
     let datePicker = UIDatePicker()
+    let timePicker = UIPickerView()
     
     init?(coder: NSCoder, l: License?) {
-        self.licencia = l
+        self.licences = l
         super.init(coder: coder)
     }
     
@@ -41,10 +42,8 @@ class AddLicenciasTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if let licence = licencia{
+        if let licence = licences{
             textTitulo.text = licence.tipoSoft
-            textFecha.text = licence.fechaSoft
-            textHorario.text = licence.tiempoSoft
             textEstatus.text = licence.disponibleSoft
             title = "Edit reserva"
         }
@@ -54,7 +53,53 @@ class AddLicenciasTableViewController: UITableViewController {
         //paso 3 invocar la función updateSaveButtonState()
         updateSaveButtonState()
         createDatePicker()
+        createPicker()
+
         
+    }
+    
+    let duraciones = ["1 días", "2 días", "3 días", "4 días", "5 días"]
+    
+    @objc func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return duraciones.count
+    }
+
+    @objc(numberOfComponentsInPickerView:) func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    @objc func pickerView(_ timePicker: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return duraciones[row]
+    }
+    
+    @objc func pickerView(_ timePicker: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        self.textHorario.text = self.duraciones[row]
+    }
+    
+    func createToolBarPicker() -> UIToolbar{
+        let toolbar = UIToolbar()
+        toolbar.sizeToFit()
+        
+        let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(donePressedPicker))
+        toolbar.setItems([doneButton], animated: true)
+        
+        return toolbar
+    }
+    
+    func createPicker(){
+        timePicker.delegate = self
+        timePicker.dataSource = self
+        
+        textHorario.inputView = timePicker
+        textHorario.inputAccessoryView = createToolBarPicker()
+    }
+    
+    @objc func donePressedPicker(){
+        let row = self.timePicker.selectedRow(inComponent: 0)
+        self.timePicker.selectRow(row, inComponent: 0, animated: false)
+        self.textHorario.text = self.duraciones[row]
+        
+        self.view.endEditing(true)
     }
     
     func createToolbar() -> UIToolbar{
@@ -75,7 +120,7 @@ class AddLicenciasTableViewController: UITableViewController {
     
     @objc func donePressed(){
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "MMMM d, yyyy"
+        dateFormatter.dateFormat = "EEEE, MMM d, yyyy"
         
         self.textFecha.text = dateFormatter.string(from: datePicker.date)
         self.view.endEditing(true)
@@ -94,7 +139,7 @@ class AddLicenciasTableViewController: UITableViewController {
         let fecha = textFecha.text ?? ""
         let horario = textHorario.text ?? ""
         let estatus = textEstatus.text ?? ""
-        licencia = License(fechaSoft: fecha, tipoSoft: titulo, caracteristicas: titulo, tiempoSoft: horario, disponibleSoft: estatus)
+        licences = License(tipoSoft: titulo, caracteristicas: titulo, disponibleSoft: estatus)
     }
     
 

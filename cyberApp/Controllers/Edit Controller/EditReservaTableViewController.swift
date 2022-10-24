@@ -7,19 +7,17 @@
 
 import UIKit
 
-class EditReservaTableViewController: UITableViewController {
+class EditReservaTableViewController: UITableViewController{
     
     var reservas:Reserva?
     
     //PASO 0 crear un IBOutlet del boton save
     @IBOutlet weak var saveButton: UIBarButtonItem! //paso 0
     @IBOutlet weak var textTitulo: UILabel!
-    @IBOutlet weak var textFecha: UITextField!
-    @IBOutlet weak var textHorario: UITextField!
-    @IBOutlet weak var textEstatus: UILabel!
-    @IBOutlet weak var textCapacidad: UILabel!
+    @IBOutlet weak var textFecha: UILabel!
+    @IBOutlet weak var textHorario: UILabel!
     
-    let datePicker = UIDatePicker()
+    @IBOutlet weak var qr: UIImageView!
     
     init?(coder: NSCoder, c: Reserva?) {
         self.reservas = c
@@ -35,8 +33,7 @@ class EditReservaTableViewController: UITableViewController {
         let icono = textTitulo.text ?? ""
         let fecha = textFecha.text ?? ""
         let horario = textHorario.text ?? ""
-        let estatus = textEstatus.text ?? ""
-        saveButton.isEnabled = !icono.isEmpty && !fecha.isEmpty && !horario.isEmpty && !estatus.isEmpty
+        saveButton.isEnabled = !icono.isEmpty && !fecha.isEmpty && !horario.isEmpty
     }
     
     override func viewDidLoad() {
@@ -46,63 +43,40 @@ class EditReservaTableViewController: UITableViewController {
             textTitulo.text = reserva.tipoRes
             textFecha.text = reserva.fecha
             textHorario.text = reserva.tiempoRes
-            textEstatus.text = reserva.estatus
-            title = "Edit reserva"
+            let code = reserva.codigo
+            print("Codigo: ")
+            print(code)
+            let image = generateQRCode(from: code)
+            qr.image = image
+            title = "Detalles de Reserva"
         }
         else{
             title = "Insert reserva"
         }
         //paso 3 invocar la función updateSaveButtonState()
         updateSaveButtonState()
-        createDatePicker()
+
         
     }
     
-    func createToolbar() -> UIToolbar{
-        let toolbar = UIToolbar()
-        toolbar.sizeToFit()
-        
-        let doneBtn = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(donePressed))
-        toolbar.setItems([doneBtn], animated: true)
-        return toolbar
-    }
-    
-    func createDatePicker(){
-        datePicker.preferredDatePickerStyle = .inline
-        datePicker.datePickerMode = .date
-        textFecha.inputView = datePicker
-        textFecha.inputAccessoryView = createToolbar()
-    }
-    
-    @objc func donePressed(){
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd"
-        
-        self.textFecha.text = dateFormatter.string(from: datePicker.date)
-        self.view.endEditing(true)
-    }
-    
-    
-    @IBAction func textEditingChanged(_ sender: UITextField) {
-        updateSaveButtonState()
-    }
+    func generateQRCode(from string: String) -> UIImage? {
+        let data = string.data(using: String.Encoding.ascii)
 
+        if let filter = CIFilter(name: "CIQRCodeGenerator") {
+            filter.setValue(data, forKey: "inputMessage")
+            let transform = CGAffineTransform(scaleX: 3, y: 3)
 
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-
-        guard segue.identifier == "saveUnwind" else { return }
-        let titulo = textTitulo.text ?? ""
-        let fecha = textFecha.text ?? ""
-        let horario = textHorario.text ?? ""
-        let estatus = textEstatus.text ?? ""
-        if reservas == nil{ //insertando nuevo
-            reservas = Reserva(fecha: fecha, tipoRes: titulo, estatus: estatus, tiempoRes: horario)
+            if let output = filter.outputImage?.transformed(by: transform) {
+                return UIImage(ciImage: output)
+            }
         }
-        else{//editando reserva
-            reservas = Reserva(id: self.reservas!.id, fecha: fecha, tipoRes: titulo, estatus: estatus, tiempoRes: horario)
 
-        }
+        return nil
     }
+    
+
+
+
     
 
 }

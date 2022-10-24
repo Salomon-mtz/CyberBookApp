@@ -6,58 +6,110 @@
 //
 
 import UIKit
-
-class AddEditReservaTableViewController: UITableViewController {
+/*
+class AddEditReservaTableViewController: UITableViewController{
     
-    var classrooms:Classroom?
+    var reservaController = ReservaController()
+    var classroom = Classrooms()
     
-    //PASO 0 crear un IBOutlet del boton save
-    @IBOutlet weak var saveButton: UIBarButtonItem! //paso 0
-    @IBOutlet weak var textTitulo: UILabel!
+    @IBOutlet weak var hardwareTextField: UITextField!
     @IBOutlet weak var textFecha: UITextField!
     @IBOutlet weak var textHorario: UITextField!
-    @IBOutlet weak var textEstatus: UILabel!
-    @IBOutlet weak var textCapacidad: UILabel!
     
     let datePicker = UIDatePicker()
+    let timePicker = UIPickerView()
+    var hardwarePickerView = UIPickerView()
     
-    init?(coder: NSCoder, c: Classroom?) {
-        self.classrooms = c
-        super.init(coder: coder)
+    var fecha = ""
+    var tiempo = ""
+    
+    
+    @IBAction func done() {
+        
+        // nueva reserva
+        let reservaNueva = Reserva(fecha: fecha, tiempoRes: tiempo)
+        // Insertar la nueva reserva en el servidor
+        Task{
+            do{
+                try await reservaController.insertReserva(nuevareserva: reservaNueva)
+                // self.updateUI()
+                showAlert()
+            }catch{
+                displayError(ReservaError.itemNotFound, title: "No se pudo acceder a las reservas")
+            }
+        }
     }
     
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    //Paso 2 crear función updateSaveButtonState
-    func updateSaveButtonState() {
-        let icono = textTitulo.text ?? ""
-        let fecha = textFecha.text ?? ""
-        let horario = textHorario.text ?? ""
-        let estatus = textEstatus.text ?? ""
-        let capacidad = textCapacidad.text ?? ""
-        saveButton.isEnabled = !icono.isEmpty && !fecha.isEmpty && !horario.isEmpty && !estatus.isEmpty && !capacidad.isEmpty
+    func showAlert() {
+        let alert = UIAlertController(title: "Reservación registrada", message: "Se guardo la información de tu reservación", preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "Aceptar", style: .cancel))
+        
+        present(alert, animated: true)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if let classroom = classrooms{
-            textTitulo.text = classroom.nombreEspacio
-            textFecha.text = classroom.fechaEsp
-            textHorario.text = classroom.tiempoEsp
-            textEstatus.text = classroom.disponibleEsp
-            textCapacidad.text = classroom.capacidad
-            title = "Edit reserva"
-        }
-        else{
-            title = "Insert reserva"
-        }
-        //paso 3 invocar la función updateSaveButtonState()
-        updateSaveButtonState()
         createDatePicker()
+        createPicker()
         
+        let url = URL(string: "http://20.38.4.246:8080/espacios/")
+        
+        URLSession.shared.dataTask(with: url!) { (data, response, error) in
+            if error == nil {
+                do {
+                    self.classroom = try JSONDecoder().decode([Classroom].self, from: data!)
+                } catch {
+                    print("Parse error")
+                }
+            }
+        }.resume()
+        
+    }
+    
+    let duraciones = ["1 hora", "2 horas", "3 horas", "4 horas", "5 horas"]
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return duraciones.count
+    }
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ timePicker: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return duraciones[row]
+    }
+    
+    func pickerView(_ timePicker: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        self.textHorario.text = self.duraciones[row]
+    }
+    
+    func createToolBarPicker() -> UIToolbar{
+        let toolbar = UIToolbar()
+        toolbar.sizeToFit()
+        
+        let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(donePressedPicker))
+        toolbar.setItems([doneButton], animated: true)
+        
+        return toolbar
+    }
+    
+    func createPicker(){
+        timePicker.delegate = self
+        timePicker.dataSource = self
+        
+        textHorario.inputView = timePicker
+        textHorario.inputAccessoryView = createToolBarPicker()
+    }
+    
+    @objc func donePressedPicker(){
+        let row = self.timePicker.selectedRow(inComponent: 0)
+        self.timePicker.selectRow(row, inComponent: 0, animated: false)
+        self.textHorario.text = self.duraciones[row]
+        
+        self.view.endEditing(true)
     }
     
     func createToolbar() -> UIToolbar{
@@ -78,34 +130,49 @@ class AddEditReservaTableViewController: UITableViewController {
     
     @objc func donePressed(){
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd"
+        dateFormatter.dateFormat = "EEEE, MMM d, yyyy"
         
         self.textFecha.text = dateFormatter.string(from: datePicker.date)
         self.view.endEditing(true)
     }
     
-    
-    @IBAction func textEditingChanged(_ sender: UITextField) {
-        updateSaveButtonState()
-    }
-
-
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-
-        guard segue.identifier == "saveUnwind" else { return }
-        let titulo = textTitulo.text ?? ""
-        let fecha = textFecha.text ?? ""
-        let horario = textHorario.text ?? ""
-        let estatus = textEstatus.text ?? ""
-        let capacidad = textCapacidad.text ?? ""
-        if classrooms == nil{ //insertando nuevo
-            classrooms = Classroom(nombreEspacio: titulo, caracteristicas: "hola", tiempoEsp: horario, disponibleEsp: estatus, capacidad: capacidad, fechaEsp: fecha)
-        }
-        else{//editando reserva
-            classrooms = Classroom(id: self.classrooms!.id, nombreEspacio: titulo, caracteristicas: "hola", tiempoEsp: horario, disponibleEsp: estatus, capacidad: capacidad, fechaEsp: fecha)
-
+    func displayError(_ error: Error, title: String) {
+        DispatchQueue.main.async {
+            let alert = UIAlertController(title: title, message: error.localizedDescription, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
         }
     }
-    
-
 }
+    
+extension AddEditReservaTableViewController: UIPickerViewDelegate, UIPickerViewDataSource {
+    
+    // Número de componentes
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    // Número de renglones
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        
+        return classroom.count
+        
+    }
+    
+    // Obtener las opciones para el pickView
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        
+        return classroom[row].nombreEspacio
+    }
+    
+    // Que hacer con la opción selecionada
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        
+        hardwareTextField.text = classroom[row].nombreEspacio
+        
+        hardwareTextField.resignFirstResponder()
+        
+    }
+    
+    
+}*/
